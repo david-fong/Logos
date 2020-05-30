@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CPEN Logo</title>
+    <meta name="author"         content="David Fong"/>
+    <meta name="description"    content=""/>
+    <meta name="viewport"       content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8"/>
+
+    <base href="."/>
+    <link rel="stylesheet" href="../utils.css"/>
+    <link rel="stylesheet" href="./index.css"/>
+</head>
+
+<body id="html-body" class="fill-parent">
+    <div class="fill-parent texture-overlay"></div>
+    <div id="hex-disp">
+    </div>
+    <div id="bottom-text">Hit me with that "segfault core dumped"</div>
+
+    <script>
+        "use strict";
+        function write(str) {
+            const hostEl = document.getElementById("hex-disp");
+            hostEl.textContent = "";
+            for (const char of str) {
+                const charEl = document.createElement("span");
+                charEl.textContent = char;
+                hostEl.appendChild(charEl);
+            }
+        }
+        write("CPEN");
+        console.log("use `write(str)` to change the title text :)");
+    </script>
+</body>
+</html>
